@@ -1,755 +1,44 @@
-<style type="text/css">
-    * {
-        box-sizing: border-box;
-    }
-    p{
-        margin:10px 0;
-        padding:0;
-    }
-    table{
-        border-collapse:collapse;
-    }
-    h1,h2,h3,h4,h5,h6{
-        display:block;
-        margin:0;
-        padding:0;
-    }
-    img,a img{
-        border:0;
-        height:auto;
-        outline:none;
-        text-decoration:none;
-    }
-    body,#bodyTable,#bodyCell{
-        height:100%;
-        margin:0;
-        padding:0;
-        width:100%;
-    }
-    .mcnPreviewText{
-        display:none !important;
-    }
-    #outlook a{
-        padding:0;
-    }
-    img{
-        -ms-interpolation-mode:bicubic;
-    }
-    table{
-        mso-table-lspace:0pt;
-        mso-table-rspace:0pt;
-    }
-    .ReadMsgBody{
-        width:100%;
-    }
-    .ExternalClass{
-        width:100%;
-    }
-    p,a,li,td,blockquote{
-        mso-line-height-rule:exactly;
-    }
-    a[href^=tel],a[href^=sms]{
-        color:inherit;
-        cursor:default;
-        text-decoration:none;
-    }
-    p,a,li,td,body,table,blockquote{
-        -ms-text-size-adjust:100%;
-        -webkit-text-size-adjust:100%;
-    }
-    .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
-        line-height:100%;
-    }
-    a[x-apple-data-detectors]{
-        color:inherit !important;
-        text-decoration:none !important;
-        font-size:inherit !important;
-        font-family:inherit !important;
-        font-weight:inherit !important;
-        line-height:inherit !important;
-    }
-    a.mcnButton{
-        display:block;
-    }
-    .mcnImage,.mcnRetinaImage{
-        vertical-align:bottom;
-    }
-    .mcnTextContent{
-        word-break:break-word;
-    }
-    .mcnTextContent img{
-        height:auto !important;
-    }
-    .mcnDividerBlock{
-        table-layout:fixed !important;
-    }
-/*
-@tab Page
-@section background style
-@tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
-*/
-    body,#bodyTable{
-        /*@editable*/background-color:#e6e6e6;
-    }
-/*
-@tab Page
-@section background style
-@tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
-*/
-    #bodyCell{
-        /*@editable*/border-top:0;
-    }
-/*
-@tab Page
-@section email border
-@tip Set the border for your email.
-*/
-    #templateContainer{
-        /*@editable*/border:0;
-    }
-/*
-@tab Page
-@section heading 1
-@tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
-@style heading 1
-*/
-    h1{
-        /*@editable*/color:#FFFFFF !important;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:30px;
-        /*@editable*/font-style:normal;
-        /*@editable*/font-weight:bold;
-        /*@editable*/line-height:100%;
-        /*@editable*/letter-spacing:-1px;
-        /*@editable*/text-align:center;
-    }
-/*
-@tab Page
-@section heading 2
-@tip Set the styling for all second-level headings in your emails.
-@style heading 2
-*/
-    h2{
-        /*@editable*/color:#232327 !important;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:18px;
-        /*@editable*/font-style:normal;
-        /*@editable*/font-weight:bold;
-        /*@editable*/line-height:125%;
-        /*@editable*/letter-spacing:-.75px;
-        /*@editable*/text-align:left;
-    }
-/*
-@tab Page
-@section heading 3
-@tip Set the styling for all third-level headings in your emails.
-@style heading 3
-*/
-    h3{
-        /*@editable*/color:#CC2D6F !important;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:26px;
-        /*@editable*/font-style:normal;
-        /*@editable*/font-weight:bold;
-        /*@editable*/line-height:125%;
-        /*@editable*/letter-spacing:-.5px;
-        /*@editable*/text-align:left;
-    }
-/*
-@tab Page
-@section heading 4
-@tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
-@style heading 4
-*/
-    h4{
-        /*@editable*/color:#AAAAAA !important;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:18px;
-        /*@editable*/font-style:normal;
-        /*@editable*/font-weight:bold;
-        /*@editable*/line-height:125%;
-        /*@editable*/letter-spacing:normal;
-        /*@editable*/text-align:right;
-    }
-/*
-@tab Preheader
-@section preheader style
-@tip Set the background color and borders for your email's preheader area.
-*/
-    #templatePreheader{
-        /*@editable*/background-color:#e6e6e6;
-        /*@editable*/border-top:0;
-        /*@editable*/border-bottom:0;
-    }
-/*
-@tab Preheader
-@section preheader text
-@tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
-*/
-    .preheaderContainer .mcnTextContent,.preheaderContainer .mcnTextContent p{
-        /*@editable*/color:#6d6b6b;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:11px;
-        /*@editable*/line-height:125%;
-        /*@editable*/text-align:left;
-    }
-/*
-@tab Preheader
-@section preheader link
-@tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
-*/
-    .preheaderContainer .mcnTextContent a{
-        /*@editable*/color:#6d6b6b;
-        /*@editable*/font-weight:normal;
-        /*@editable*/text-decoration:underline;
-    }
-/*
-@tab Header
-@section header style
-@tip Set the background color and borders for your email's header area.
-*/
-    #templateHeader{
-        /*@editable*/background-color:#ed2924;
-        /*@editable*/border-top:0;
-        /*@editable*/border-bottom:0;
-    }
-/*
-@tab Header
-@section header text
-@tip Set the styling for your email's header text. Choose a size and color that is easy to read.
-*/
-    .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
-        /*@editable*/color:#FFFFFF;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:18px;
-        /*@editable*/line-height:150%;
-        /*@editable*/text-align:left;
-    }
-/*
-@tab Header
-@section header link
-@tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
-*/
-    .headerContainer .mcnTextContent a{
-        /*@editable*/color:#FFFFFF;
-        /*@editable*/font-weight:normal;
-        /*@editable*/text-decoration:underline;
-    }
-/*
-@tab Upper Body
-@section upper body style
-@tip Set the background color and borders for your email's upper body area.
-*/
-    #templateUpperBody{
-        /*@editable*/background-color:#f8a99f;
-        /*@editable*/border-top:0;
-        /*@editable*/border-bottom:0;
-    }
-/*
-@tab Upper Body
-@section upper body text
-@tip Set the styling for your email's upper body text. Choose a size and color that is easy to read.
-*/
-    .upperBodyContainer .mcnTextContent,.upperBodyContainer .mcnTextContent p{
-        /*@editable*/color:#232327;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:16px;
-        /*@editable*/line-height:125%;
-        /*@editable*/text-align:left;
-    }
-/*
-@tab Upper Body
-@section upper body link
-@tip Set the styling for your email's upper body links. Choose a color that helps them stand out from your text.
-*/
-    .upperBodyContainer .mcnTextContent a{
-        /*@editable*/color:#4caad8;
-        /*@editable*/font-weight:normal;
-        /*@editable*/text-decoration:underline;
-    }
-/*
-@tab Columns
-@section column style
-@tip Set the background color and borders for your email's columns area.
-*/
-    #templateColumns{
-        /*@editable*/background-color:#f8a99f;
-        /*@editable*/border-top:0;
-        /*@editable*/border-bottom:0;
-    }
-/*
-@tab Columns
-@section left column text
-@tip Set the styling for your email's left column text. Choose a size and color that is easy to read.
-*/
-    .leftColumnContainer .mcnTextContent,.leftColumnContainer .mcnTextContent p{
-        /*@editable*/color:#232327;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:14px;
-        /*@editable*/line-height:150%;
-        /*@editable*/text-align:left;
-    }
-/*
-@tab Columns
-@section left column link
-@tip Set the styling for your email's left column links. Choose a color that helps them stand out from your text.
-*/
-    .leftColumnContainer .mcnTextContent a{
-        /*@editable*/color:#4caad8;
-        /*@editable*/font-weight:normal;
-        /*@editable*/text-decoration:underline;
-    }
-/*
-@tab Columns
-@section right column text
-@tip Set the styling for your email's right column text. Choose a size and color that is easy to read.
-*/
-    .rightColumnContainer .mcnTextContent,.rightColumnContainer .mcnTextContent p{
-        /*@editable*/color:#232327;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:14px;
-        /*@editable*/line-height:150%;
-        /*@editable*/text-align:left;
-    }
-/*
-@tab Columns
-@section right column link
-@tip Set the styling for your email's right column links. Choose a color that helps them stand out from your text.
-*/
-    .rightColumnContainer .mcnTextContent a{
-        /*@editable*/color:#4caad8;
-        /*@editable*/font-weight:normal;
-        /*@editable*/text-decoration:underline;
-    }
-/*
-@tab Lower Body
-@section body style
-@tip Set the background color and borders for your email's lower body area.
-*/
-    #templateLowerBody{
-        /*@editable*/background-color:#f8a99f;
-        /*@editable*/border-top:0;
-        /*@editable*/border-bottom:0;
-    }
-/*
-@tab Lower Body
-@section lower body text
-@tip Set the styling for your email's lower body text. Choose a size and color that is easy to read.
-*/
-    .lowerBodyContainer .mcnTextContent,.lowerBodyContainer .mcnTextContent p{
-        /*@editable*/color:#AAAAAA;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:16px;
-        /*@editable*/line-height:150%;
-        /*@editable*/text-align:left;
-    }
-/*
-@tab Lower Body
-@section lower body link
-@tip Set the styling for your email's lower body links. Choose a color that helps them stand out from your text.
-*/
-    .lowerBodyContainer .mcnTextContent a{
-        /*@editable*/color:#AAAAAA;
-        /*@editable*/font-weight:normal;
-        /*@editable*/text-decoration:underline;
-    }
-/*
-@tab Footer
-@section footer style
-@tip Set the background color and borders for your email's footer area.
-*/
-    #templateFooter{
-        /*@editable*/background-color:#1e1e1e;
-        /*@editable*/border-top:0;
-        /*@editable*/border-bottom:0;
-    }
-/*
-@tab Footer
-@section footer text
-@tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
-*/
-    .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
-        /*@editable*/color:#FFFFFF;
-        /*@editable*/font-family:Helvetica;
-        /*@editable*/font-size:11px;
-        /*@editable*/line-height:125%;
-        /*@editable*/text-align:center;
-    }
-/*
-@tab Footer
-@section footer link
-@tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
-*/
-    .footerContainer .mcnTextContent a{
-        /*@editable*/color:#FFFFFF;
-        /*@editable*/font-weight:normal;
-        /*@editable*/text-decoration:underline;
-    }
-@media only screen and (max-width: 480px){
-    body,table,td,p,a,li,blockquote{
-        -webkit-text-size-adjust:none !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    body{
-        width:100% !important;
-        min-width:100% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    #bodyCell{
-        padding-top:10px !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    #templateContainer,#templatePreheader,#templateHeader,#templateColumns,#templateUpperBody,#templateLowerBody,#templateFooter{
-        max-width:600px !important;
-        width:100% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .columnsContainer{
-        display:block!important;
-        max-width:600px !important;
-        width:100%!important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnRetinaImage{
-        max-width:100% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnImage{
-        height:auto !important;
-        width:100% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer,.mcnImageCardLeftImageContentContainer,.mcnImageCardRightImageContentContainer{
-        max-width:100% !important;
-        width:100% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnBoxedTextContentContainer{
-        min-width:100% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnImageGroupContent{
-        padding:9px !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
-        padding-top:9px !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{
-        padding-top:18px !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnImageCardBottomImageContent{
-        padding-bottom:9px !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnImageGroupBlockInner{
-        padding-top:0 !important;
-        padding-bottom:0 !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnImageGroupBlockOuter{
-        padding-top:9px !important;
-        padding-bottom:9px !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnTextContent,.mcnBoxedTextContentColumn{
-        padding-right:18px !important;
-        padding-left:18px !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
-        padding-right:18px !important;
-        padding-bottom:0 !important;
-        padding-left:18px !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-    .mcpreview-image-uploader{
-        display:none !important;
-        width:100% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section heading 1
-@tip Make the first-level headings larger in size for better readability on small screens.
-*/
-    h1{
-        /*@editable*/font-size:13px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section heading 2
-@tip Make the second-level headings larger in size for better readability on small screens.
-*/
-    h2{
-        /*@editable*/font-size:18px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section heading 3
-@tip Make the third-level headings larger in size for better readability on small screens.
-*/
-    h3{
-        /*@editable*/font-size:14px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section heading 4
-@tip Make the fourth-level headings larger in size for better readability on small screens.
-*/
-    h4{
-        /*@editable*/font-size:14px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section Boxed Text
-@tip Make the boxed text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-*/
-    .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
-        /*@editable*/font-size:16px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section Preheader Visibility
-@tip Set the visibility of the email's preheader on small screens. You can hide it to save space.
-*/
-    #templatePreheader{
-        /*@editable*/display:block !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section Preheader Text
-@tip Make the preheader text larger in size for better readability on small screens.
-*/
-    .preheaderContainer .mcnTextContent,.preheaderContainer .mcnTextContent p{
-        /*@editable*/font-size:14px !important;
-        /*@editable*/line-height:115% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section Header Text
-@tip Make the header text larger in size for better readability on small screens.
-*/
-    .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
-        /*@editable*/font-size:16px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section Upper Body Text
-@tip Make the upper body text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-*/
-    .upperBodyContainer .mcnTextContent,.upperBodyContainer .mcnTextContent p{
-        /*@editable*/font-size:16px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section Lower Body Text
-@tip Make the lower body text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-*/
-    .lowerBodyContainer .mcnTextContent,.lowerBodyContainer .mcnTextContent p{
-        /*@editable*/font-size:16px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section Left Column Text
-@tip Make the left column text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-*/
-    .leftColumnContainer .mcnTextContent,.leftColumnContainer .mcnTextContent p{
-        /*@editable*/font-size:14px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section Right Column Text
-@tip Make the right column text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-*/
-    .rightColumnContainer .mcnTextContent,.rightColumnContainer .mcnTextContent p{
-        /*@editable*/font-size:14px !important;
-        /*@editable*/line-height:125% !important;
-    }
-
-}	@media only screen and (max-width: 480px){
-/*
-@tab Mobile Styles
-@section footer text
-@tip Make the body content text larger in size for better readability on small screens.
-*/
-    .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
-        /*@editable*/font-size:13px !important;
-        /*@editable*/line-height:115% !important;
-    }
-
-}
-.content-wrapper {
-    width: 600px;
-    background-color: #fff;
-    padding: 20px;
-}
-</style>
-
-
-<body>
-    <!--*|IF:MC_PREVIEW_TEXT|*-->
-    <!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]-->
-    <!--*|END:IF|*-->
-        <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
-            <tr>
-                <td align="center" valign="top" id="bodyCell">
-                    <!-- BEGIN TEMPLATE // -->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                        <tr>
-                            <td align="center" valign="top" id="templatePreheader">
-                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
-                                    <tr>
-                                        <td valign="top" class="preheaderContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-                                    <tbody class="mcnTextBlockOuter">
-                                        <tr>
-                                            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-                                                    <tbody><tr>
-                                                        
-                                                        <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px; text-align: center;">
-                                                        
-                                                            <a href="*|ARCHIVE|*" target="_blank">View this email in your browser</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody></table>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
-                                    <tbody class="mcnImageBlockOuter">
-                                            <tr>
-                                                <td valign="top" class="mcnImageBlockInner">
-                                                    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
-                                                                    <img align="center" alt="" src="https://mcusercontent.com/b414258a6861c5d238de44111/images/86e57d9e-0411-4de9-bca9-326373a5bf0a.png" width="564" style="min-width:600px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td align="center" valign="top" id="templateHeader">
-                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
-                        <tr>
-                            <td valign="top" class="headerContainer"></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td align="center" valign="top" id="templateBody">
-                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
-                        <tr>
-                            <td valign="top" class="bodyContainer"></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td align="center" valign="top" id="templateFooter">
-                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
-                        <tr>
-                            <td valign="top" class="footerContainer"></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-
-
-
-                    <!-- // END TEMPLATE -->
-
-    <style type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 0;
+            font-family: 'Arial Narrow Bold', sans-serif;
+        }
         .content-wrapper {
             width: 600px;
             background-color: #f8a99f;
             padding: 30px 40px;
         }
         .content-wrapper h1 {
-            color: #000 !important;
-            font-family: 'Arial Narrow Bold', sans-serif;
+            color: #000;
             text-align: left;
-            margin-bottom: 10px;
+            font-size: 30px;
+            margin: 10px 0;
         }
         .content-wrapper h3 {
-            color: #ED2924 !important;
-            font-family: 'Arial Narrow Bold', sans-serif;
+            color: #ED2924;
             text-align: left;
-            font-size: 24px !important;
+            font-size: 24px;
+            margin: 10px 0;
         }
         .content-wrapper p {
-            color: #000 !important;
-            font-family: 'Arial', sans-serif;
+            color: #000;
             text-align: left;
             line-height: 1.4;
         }
         .content-wrapper a {
-            color: #ED2924 !important;
-            font-family: 'Arial', sans-serif;
+            color: #ED2924;
             text-decoration: underline;
         }
         .content-wrapper .btn-wrapper {
@@ -760,207 +49,76 @@
         .content-wrapper button {
             background-color: #007A68;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 25px;
             border: none;
-            font-size: 14px;
+            font-size: 16px;
             border-radius: 3px;
+            font-weight: bold;
+        }
+        .footer-wrapper {
+            background-color: #000;
+            color: #fff;
+            width: 600px;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        .footer-wrapper a {
+            color: #ED2924;
+            text-decoration: underline;
+        }
+        .note {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .note a {
+            color: grey;
+            font-size: 12px;
+        }
+        .store-icon {
+            height: 40px;
+            margin: 10px 10px 10px 0;
         }
     </style>
-
-    <section class="content-wrapper">
-        <h1>Hello {RECIPIENT_FIRST_NAMES},</h1>
-        <h3>Welcome to Nimble AnyTime!</h3>
-        <p class="intro-p">Congratulations on making the first step towards taking control of your finances.</p>
-        <p>Your Nimble AnyTime account is waiting for you. Get started right away by downloading the Nimble AnyTime card app and enjoy the freedom to Tap and Pay in store or make purchases online.</p>
-        <a href=""><img src="" alt=""></a>
-        <p>Or, transfer money directly to your bank account from your Account Management area </p>
-        <div class="btn-wrapper">
-            <a href=""><button>Login to AnyTime</button></a>
+</head>
+<body>
+    <main class="main-wrapper">
+        <div class="note">
+            <a href="*|ARCHIVE|*" target="_blank">View this email in your browser</a>
         </div>
-        <p>If you have any questions about Nimble AnyTime or you would like to receive a copy of your contract, please email us at <a href="mailto:anytime@nimble.com.au">anytime@nimble.com.au</a> or call us on <a href="tel:133 156">133 156</a>.</p>
-    </section>
-    <footer>
-        <img align="center" alt="" src="https://mcusercontent.com/b414258a6861c5d238de44111/images/0ce55f99-8f0a-4485-8d9c-353c872b072c.png" width="106.2" style="max-width:177px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
-    </footer>
-
-
-
-        <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
-            <tr>
-                <td align="center" valign="top" id="bodyCell">
-                    <!-- BEGIN TEMPLATE // -->
-                    <tr>
-                        <td align="center" valign="top">
-                            <!-- BEGIN COLUMNS // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateColumns">
-                                <tr>
-                                    <td align="left" valign="top" class="columnsContainer" width="50%">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumn">
-                                            <tr>
-                                                <td valign="top" class="leftColumnContainer"></td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td align="left" valign="top" class="columnsContainer" width="50%">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumn">
-                                            <tr>
-                                                <td valign="top" class="rightColumnContainer"></td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- // END COLUMNS -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" valign="top">
-                            <!-- BEGIN LOWER BODY // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateLowerBody">
-                                <tr>
-                                    <td valign="top" class="lowerBodyContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
-                                        <tbody class="mcnDividerBlockOuter">
-                                            <tr>
-                                                <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 5px 18px;">
-                                                    <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 2px none #EAEAEA;">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <span></span>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                <!--            
-                                                        <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                                        <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                                                -->
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <!-- // END LOWER BODY -->
- 
-
-                    <!-- BEGIN FOOTER // -->
-                    <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateFooter">
-                        <tr>
-                            <td valign="top" class="footerContainer" style="padding-bottom:9px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
-                                <tbody class="mcnDividerBlockOuter">
-                                    <tr>
-                                        <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 10px 18px;">
-                                            <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 2px none #EAEAEA;">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <span></span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        <!--            
-                                                <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                                        -->
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tbody class="mcnImageBlockOuter">
-                                    <tr>
-                                        <td valign="top" style="padding:0px" class="mcnImageBlockInner">
-                                            <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
-                                                            <img align="center" alt="" src="https://mcusercontent.com/b414258a6861c5d238de44111/images/0ce55f99-8f0a-4485-8d9c-353c872b072c.png" width="106.2" style="max-width:177px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tbody class="mcnTextBlockOuter">
-                                <tr>
-                                    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-                                        <!--[if mso]>
-                                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                                        <tr>
-                                        <![endif]-->
-                                        
-                                        <!--[if mso]>
-                                        <td valign="top" width="600" style="width:600px;">
-                                        <![endif]-->
-                                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-                                            <tbody>
-                                                <tr>
-                                                    <td td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-                                                        <p style="text-align: center;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Call us on <strong>133 156</strong> or email <strong><a href="mailto:email anytime@nimble.com.au" target="_blank">anytime@nimble.com.au</a></strong>&nbsp;</span><br>
-                                                        <br>
-                                                        Want to change how you receive these emails?
-                                                        <br>
-                                                        You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a>.<br>
-                                                        <br>
-                                                        Please note that the available balance is current at the time of preparation of this communication and may not take into account all fees and charges on your account. You should check your Nimble AnyTime account to confirm.</span></p>
-                                                        <p style="text-align: center;"><span style="font-size:14px">Copyright @ 2020 Nimble Australia Pty LTD<br>
-                                                        ABN 91 135 501 807, Australian Credit Licence 386010.</span></p>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <!--[if mso]>
-                                        </td>
-                                        <![endif]-->
-                                        
-                                        <!--[if mso]>
-                                        </tr>
-                                        </table>
-                                        <![endif]-->
-                                    </td>
-                                </tr>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
-            <tr>
-                <td valign="top" class="preheaderContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-            <tbody class="mcnTextBlockOuter">
-                <tr>
-                    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                        <tr>
-                        <![endif]-->
-                        
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-                            <tbody><tr>
-                                
-                                <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px; text-align: center;">
-                                
-                                    <a href="*|ARCHIVE|*" target="_blank">View this email in your browser</a>
-                                </td>
-                            </tr>
-                        </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-                        
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <header>
+            <img align="center" alt="" src="https://mcusercontent.com/b414258a6861c5d238de44111/images/86e57d9e-0411-4de9-bca9-326373a5bf0a.png" width="564" style="min-width:600px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+        </header>   
+    
+        <section class="content-wrapper">
+            <h1>Hello {RECIPIENT_FIRST_NAMES},</h1>
+            <h3>Welcome to Nimble AnyTime!</h3>
+            <p class="intro-p">Congratulations on making the first step towards taking control of your finances.</p>
+            <p>Your Nimble AnyTime account is waiting for you. Get started right away by downloading the Nimble AnyTime card app and enjoy the freedom to Tap and Pay in store or make purchases online.</p>
+            <div>
+                <a href="#"><img class="store-icon" src="https://images.ctfassets.net/930h20wnqvpb/t9MtaHMrROtAXVPPevPYa/85cca9e1e0bf8cabf5f61cbffaaf9ad0/app-store-icon.png" alt=""></a>
+                <a href="#"><img class="store-icon" src="https://images.ctfassets.net/930h20wnqvpb/4lPejiSI5EHGCoJ0g7eWGT/81ec9f2d990db5f9fd413a9b0c466aad/google-store-icon.png" alt=""></a>
+            </div>
+            <p>Or, transfer money directly to your bank account from your Account Management area </p>
+            <div class="btn-wrapper">
+                <a href=""><button>Login to AnyTime</button></a>
+            </div>
+            <p>If you have any questions about Nimble AnyTime or you would like to receive a copy of your contract, please email us at <a href="mailto:anytime@nimble.com.au">anytime@nimble.com.au</a> or call us on <a href="tel:133 156">133 156</a>.</p>
+        </section>
+    
+        <footer class="footer-wrapper">
+            <img align="center" alt="" src="https://mcusercontent.com/b414258a6861c5d238de44111/images/0ce55f99-8f0a-4485-8d9c-353c872b072c.png" width="106.2" style="max-width:177px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                <p>Call us on <strong>133 156</strong> or email <strong><a href="mailto:email anytime@nimble.com.au" target="_blank">anytime@nimble.com.au</a></strong></span></p>
+                <p>Want to change how you receive these emails?</p>
+                <p>You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a>.</p>
+                <p>Please note that the available balance is current at the time of preparation of this communication and may not take into account all fees and charges on your account. You should check your Nimble AnyTime account to confirm.</p>
+                <p>Copyright @ 2020 Nimble Australia Pty LTD</p>
+                <p>ABN 91 135 501 807, Australian Credit Licence 386010.</p>
+            </td>
+        </footer>
+        <div class="note">
+            <a href="*|ARCHIVE|*" target="_blank">View this email in your browser</a>
+        </div>
+    </main>
 </body>
+</html>
